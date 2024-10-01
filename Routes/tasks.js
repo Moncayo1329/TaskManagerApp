@@ -1,9 +1,10 @@
-const express = require('express'); // Correcto, importa express
-const router = express.Router(); // Correcto, crea una nueva instancia de router
+// routes/tasks.js
+const express = require('express');
+const router = express.Router();
+const { getAllTasks } = require('../controllers/tasks');
 
-const { getAllTasks,createTask,getTask,updateTask,deleteTask} = require('../controllers/tasks'); // Asegúrate de que el archivo y la ruta al controlador sean correctos
+// Define la ruta GET para obtener todas las tareas
+router.route('/').get(getAllTasks);
 
-router.route('/').get(getAllTasks).post(createTask)
-router.route('/:id').get(getTask).patch(updateTask).delete(deleteTask) // Define una ruta GET para el endpoint raíz ('/')
+module.exports = router;
 
-module.exports = router; // Exporta el router para poder usarlo en otro archivo
