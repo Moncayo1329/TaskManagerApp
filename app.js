@@ -1,7 +1,7 @@
 // index.js o app.js
 const express = require('express');
 const app = express();
-const tasks = require('./Routes/tasks'); // Asegúrate de que esta ruta sea correcta
+const tasks = require('./routes/tasks'); // Asegúrate de que esta ruta sea correcta
 
 app.use(express.json());
 
