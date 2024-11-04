@@ -13,5 +13,11 @@ app.get('/hello', (req, res) => {
 // Rutas para las tareas
 app.use('/api/v1/tasks', tasks);
 
-const port = 3000;
-app.listen(port, console.log(`Server is listening on port ${port}...`));
+
+// server 
+
+const port = 1234;
+
+app.listen(port, () => {
+    console.log(`Server is listening on http://localhost:${port}`);
+});
