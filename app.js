@@ -6,12 +6,11 @@ const connectDB = require('./db/connect')
 require('dotenv').config()
 
 // Middleware para analizar cuerpos JSON
+app.use(express.static('./public'))
 app.use(express.json());
 
 // Ruta de prueba
-app.get('/hello', (req, res) => {
-    res.send('Task Manager App');
-});
+
 
 // Usa el router para las rutas /api/v1/tasks
 app.use('/api/v1/tasks', tasks);
